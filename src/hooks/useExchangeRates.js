@@ -3,7 +3,7 @@ import { saveCacheRates, loadCacheRates } from '../utils/storage'
 
 // NOTE: Replace with your own key from https://www.exchangerate-api.com/
 // The free plan gives 1,500 requests/month — sufficient for dev/demo
-const API_KEY = 'ecb840a20c1733db71dc0446'
+const API_KEY = import.meta.env.VITE_API_KEY
 const BASE_URL = 'https://v6.exchangerate-api.com/v6'
 
 export const useExchangeRates = (baseCurrency = 'PKR') => {
