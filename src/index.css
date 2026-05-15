@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: #131313;
+    color: #ffffff;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #131313;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #CFF008;
+    border-radius: 2px;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-5 py-2.5 rounded-full text-sm font-semibold text-muted transition-all duration-200 hover:text-white hover:bg-dark-elevated;
+  }
+
+  .nav-link.active {
+    @apply bg-lime text-dark;
+  }
+
+  .card {
+    @apply bg-dark-card border border-dark-border rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply w-full py-4 rounded-xl bg-lime text-dark font-extrabold text-base tracking-wide
+           transition-all duration-150 hover:bg-lime-hover hover:-translate-y-0.5 active:translate-y-0
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply px-5 py-2.5 rounded-full border border-dark-border text-muted font-semibold text-sm
+           transition-all duration-200 hover:border-lime hover:text-lime;
+  }
+
+  .field-label {
+    @apply text-xs font-bold tracking-widest text-muted uppercase mb-2.5;
+  }
+
+  .input-wrap {
+    @apply bg-dark rounded-xl border border-dark-border p-4 flex flex-col gap-2
+           transition-all duration-200 focus-within:border-lime/40;
+  }
+
+  .currency-select {
+    @apply bg-transparent border-none outline-none font-urbanist text-sm font-bold
+           text-white cursor-pointer appearance-none w-full;
+  }
+
+  .amount-input {
+    @apply bg-transparent border-none outline-none font-urbanist text-3xl font-black
+           text-lime w-full tracking-tight;
+  }
+
+  .rate-card {
+    @apply bg-dark-card border border-dark-border rounded-2xl p-4 cursor-pointer
+           transition-all duration-200 hover:border-lime/40 hover:bg-dark-elevated;
+  }
+
+  .badge-live {
+    @apply inline-flex items-center gap-2 bg-dark-card border border-dark-border
+           rounded-full px-4 py-2 text-xs font-bold text-muted;
+  }
+
+  .history-item {
+    @apply card p-5 flex items-center justify-between gap-4
+           transition-all duration-200 hover:border-dark-hover animate-slide-up;
+  }
+
+  .tech-pill {
+    @apply px-4 py-2 bg-dark-card border border-dark-border rounded-full text-sm font-semibold text-muted;
+  }
+
+  .tech-pill-highlight {
+    @apply px-4 py-2 bg-dark-card border border-lime/50 rounded-full text-sm font-semibold text-lime;
+  }
+
+  .feature-card {
+    @apply card p-6 transition-all duration-200 hover:border-dark-hover;
+  }
+
+  .skeleton {
+    @apply bg-dark-elevated rounded-lg animate-pulse;
+  }
+}
